@@ -1,3 +1,5 @@
+@import "compass/css3/shared";
+
 @mixin display-flex{
 	@include experimental-value(display, box, -moz, -webkit, not -o, -ms, not -khtml); 
 	@include experimental-value(display, flexbox, -moz, -webkit, not -o, -ms, not -khtml);
@@ -18,9 +20,13 @@
 @mixin flex-direction($orientation: $default-box-orient) {
 	$orientation: unquote($orientation);
 	$old-orientation : $orientation;
-	@if ($orientation == 'column'){ $old-orientation: vertical; }
-	@if ($orientation == 'row'){ $old-orientation: horizontal; }
+	$old-direction: normal;
+	@if ($orientation == 'row'){ $old-orientation: horizontal;}
+	@if ($orientation == 'column'){ $old-orientation: vertical;}
+	@if ($orientation == 'row-reverse'){ $old-orientation: horizontal; $old-direction: reverse; }
+	@if ($orientation == 'column-reverse'){ $old-orientation: vertical; $old-direction: reverse; }
 	@include experimental(box-orient, $old-orientation, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(box-direction, $old-direction, -moz, -webkit, not -o, -ms, not -khtml);
 	@include experimental(flex-direction, $orientation, -moz, -webkit, not -o, -ms, not -khtml, official);
 }
 

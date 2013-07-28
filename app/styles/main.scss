@@ -1,0 +1,150 @@
+@import "flex";
+
+body {
+    margin:0;
+    padding:10px 40px;
+    background:#fff;
+    font-size: 1.4em;
+    font-family: helvetica, arial, serif;
+}
+h1 {
+    color: #345;
+    text-shadow: 1px 1px 2px #aaa;
+    font-size:1.8em
+}
+h2 {
+    margin-top: 2em;
+    color: #567;
+    text-shadow: 1px 1px 2px #aaa;
+    font-size:1.1em
+}
+h3 {
+    color: #678;
+    text-shadow: 1px 1px 2px #aaa;
+    font-size: 1em;
+}
+.kiwi {
+    width: 80%;
+    outline: 1px solid #333;
+    background: #eee;
+    margin: 0; padding: 0;
+    //display: -webkit-flex; /* OK chrome 21 */
+    //display: flex;
+    @include display-flex;
+}
+li {
+    color: #fff;
+    padding: 10px;
+    list-style: none;
+    background: tomato
+}
+li:nth-child(2) {
+    background: orange
+}
+li:nth-child(3) {
+    background: #800000
+}
+li:nth-child(4) {
+    background: #FF3399
+}
+li:nth-child(5) {
+    background: #3399FF
+}
+
+// flex-direction
+.k1{
+    @include flex-direction(row);
+}
+.k2{
+    @include flex-direction(column);
+}
+.k3{
+    @include flex-direction(row-reverse);
+}
+.k4{
+    @include flex-direction(column-reverse);
+}
+
+// flex-wrap
+.k5{
+    @include flex-wrap(nowrap);
+}
+.k6{
+    @include flex-wrap(wrap);
+}
+.k7{
+    @include flex-wrap(wrap-reverse);
+}
+
+// justify-content
+.k8{
+    @include justify-content(flex-start);
+}
+.k9{
+    @include justify-content(flex-end);
+}
+.k10{
+    @include justify-content(center);
+}
+.k11{
+    @include justify-content(space-between);
+}
+.k12{
+    @include justify-content(space-around);
+}
+
+// align-items
+.k13, .k14, .k15, .k16, .k17{
+    height: 100px;
+}
+.k13{
+    @include align-items(flex-start);
+}
+.k14{
+    @include align-items(flex-end);
+}
+.k15{
+    @include align-items(center);
+}
+.k16{
+    @include align-items(baseline);
+}
+.k17{
+    @include align-items(stretch);
+}
+
+// flex
+.k19{
+    li:nth-child(5){
+        @include flex(1);
+    }
+}
+.k20{
+    li:nth-child(4), li:nth-child(5){
+        @include flex(1);
+    }
+}
+.k21{
+    li{
+        @include flex(1);
+    }
+}
+.k22{
+    li:nth-child(4){
+        @include flex(1);
+    }
+    li:nth-child(5){
+        @include flex(2);
+    }
+}
+
+// flew-flow
+.k23{
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+    li{
+        @include flex(1 150px);
+    }
+}
+
+
