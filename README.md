@@ -1,5 +1,4 @@
 #Compass-Flex
-============
 
 A Compass module to provide the "new" CSS3 Flexbox because Compass use the "old" one
 
