@@ -16,7 +16,7 @@ Download `lib/_flex.scss`
 ```
 bower install https://github.com/Freddy03h/compass-flex.git --save
 ```
-(Note: Use the github repo link because it not registred)
+(Note: Use the github repo link because it not officially registred has a bower component)
 
 
 ## How to use
