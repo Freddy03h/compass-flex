@@ -1,4 +1,4 @@
-@import "compass/css3/shared";
+@import "compass/css3/deprecated-support";
 
 $flexbox-2009-support: -moz, -webkit, not -o, not -ms, not -khtml, not official;
 $flexbox-2011-support: not -moz, not -webkit, not -o, -ms, not -khtml, not official;
